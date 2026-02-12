@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="cat-btn">Vis en katt!</button>
+    <p id="cat-amount">Antall katter: 0</p>
+    <div id="cat-images"></div>
+    <script>
+      const catBtn = document.getElementById("cat-btn");
+      const catAmount = document.getElementById("cat-amount");
+      const catImages = document.getElementById("cat-images");
+
+      let catCounter = 0;
+
+      catBtn.addEventListener("click", showCats);
+
+      function showCats() {
+        catImages.innerHTML += `<img src="assets/jetpack-cat.avif" style="width: 150px" />`;
+        updateCatCounter();
+      }
+
+      function updateCatCounter() {
+        catCounter++;
+        catAmount.innerText = `Antall katter: ${catCounter}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      id="user-input-field"
+      placeholder="Skriv inn noe for å pakke..."
+    />
+    <button id="add-btn">Legg til</button>
+    <div id="list-container"></div>
+    <script>
+      const userInputField = document.getElementById("user-input-field");
+      const addBtn = document.getElementById("add-btn");
+      const listContainer = document.getElementById("list-container");
+
+      addBtn.addEventListener("click", addListItem);
+
+      function addListItem() {
+        if (userInputField.value == "") {
+          alert("Du må skrive noe i feltet!");
+        } else {
+          const userInput = userInputField.value;
+
+          listContainer.innerHTML += `<p>${userInput}</p>`;
+
+          userInputField.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
